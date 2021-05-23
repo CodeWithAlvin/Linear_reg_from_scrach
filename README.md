@@ -1,2 +1,3 @@
 # Ml_ImplementingByOwn
-Models implement by myself and mathematics behind them
+
+Trying ito understand mathematics behind Ml and remaking the models
