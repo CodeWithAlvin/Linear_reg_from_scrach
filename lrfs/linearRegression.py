@@ -46,7 +46,6 @@ class LinearRegression:
         self.learn()
 	
     def optimizer(self,):
-        #implement all
         '''
         w := w - Ã¦. d(J)/dw
         d(J(w))/dw = -2/m (y-h(x)) x
@@ -56,7 +55,7 @@ class LinearRegression:
             random_index = np.random.randint(0,len(self.x),self.batch_size)
             predictions = self.predict(self.x[random_index])
             diffrence = self.y[random_index] - predictions
-            gradients = np.sum(2 * diffrence*self.x[random_index])/self.batch_size
+            gradients = np.sum(2 * diffrence*self.x[random_index],axis=0)/self.batch_size
             self.weights = self.weights + (self.learning_rate * gradients)
             self.bias = self.bias + ((self.learning_rate * np.sum(2 * diffrence)) /self.batch_size)
 		
@@ -68,7 +67,7 @@ class LinearRegression:
             self.print_info(i,loss)
 	
     def print_info(self,i,loss):
-        print(f'\n[{i}/{self.epoch}] epoch  - loss : {loss}\n')
+        print(f'\n[{i}/{self.epoch}] epoch  - loss : {loss} bias:{self.bias} weights:{self.weights}\n')
 		
     def predict(self,X):
         return  np.array(list(map(lambda x: sum(x*self.weights + self.bias) , X))).reshape(len(X),-1)

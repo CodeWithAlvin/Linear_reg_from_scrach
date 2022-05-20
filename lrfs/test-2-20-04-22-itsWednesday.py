@@ -4,7 +4,7 @@ x =  [x for x in range(1000,1020)]
 y = [y**2 - 2*y for y in x ]
 
 model = linearRegression.LinearRegression()
-model.build(input_shape=2,learning_rate=1e-7,epoch=10)
+model.build(input_shape=1,learning_rate=1e-10,epoch=50)
 model.fit(x,y)
 
 t_x =  [x for x in range(1000,1020)]

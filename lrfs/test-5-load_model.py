@@ -7,10 +7,8 @@ data = datasets.load_boston()
 x = data.data
 y = data.target
 
-model.load("boston.mdl")
+model.load("lrfs/boston.mdl")
 
 prediction = model.predict(x).flatten()
-
-print(prediction,y)
 
 print('loss = ',sum(abs(y-prediction))/len(prediction))
