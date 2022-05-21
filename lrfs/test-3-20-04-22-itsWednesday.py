@@ -4,7 +4,7 @@ x = [[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x] for x in range(10000)]
 y = [48*y+1 for y in range(10000)]
 
 model = linearRegression.LinearRegression()
-model.build(input_shape=24,learning_rate=1e-11,epoch=50)
+model.build(input_shape=24,learning_rate=1e-11,epoch=50,after_epoch=20,lr_factor=2)
 model.fit(x,y)
 
 t_x =  [[x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x] for x in range(10000,10020)]

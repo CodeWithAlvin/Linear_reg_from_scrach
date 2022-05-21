@@ -12,6 +12,7 @@ t_y = [-600*y+50 for y in range(10000,10020)]
 
 prediction = model.predict(t_x).flatten()
 
-print(prediction,t_y)
+for i in range(len(t_x)):
+    print(f'{t_y[i]} , {prediction[i]:.1f}')
 
-print('loss = ',sum(abs(t_y-prediction))/len(prediction))
+print(f'loss = {sum(abs(t_y-prediction))/len(prediction):.2f}')

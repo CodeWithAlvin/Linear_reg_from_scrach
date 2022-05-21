@@ -16,6 +16,7 @@ model.fit(x,y)
 model.save('lrfs/boston.mdl')
 prediction = model.predict(test_x).flatten()
 
+
 print(prediction,test_y)
 
 print('loss = ',sum(abs(test_y-prediction))/len(prediction))

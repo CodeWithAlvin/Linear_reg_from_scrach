@@ -1,5 +1,7 @@
 import linearRegression
 
+# not work because data is quadratic which cant be fit by linear regression
+
 x =  [x for x in range(1000,1020)]
 y = [y**2 - 2*y for y in x ]
 
